@@ -15,19 +15,13 @@ public class FizzBuzzSolution {
     }
 
     boolean isDeluxe(int number) {
-        if (number < 10)
-            return false;
+        if (number % 3 == 0 && checkNumber(number, 3))
+            return true;
 
-        int x = number % 10;
-        int auxiliar = number;
+        if (number % 5 == 0 && checkNumber(number, 5))
+            return true;
 
-        while (auxiliar > 0) {
-            if (auxiliar % 10 != x)
-                return false;
-            auxiliar /= 10;
-        }
-
-        return true;
+        return false;
     }
 
     public String fizzBuzz(Integer number) {
@@ -64,6 +58,7 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
 
