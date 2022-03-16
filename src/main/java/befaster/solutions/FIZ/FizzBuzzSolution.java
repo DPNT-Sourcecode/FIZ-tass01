@@ -16,7 +16,7 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
 
-        if (number % 3 == 0 || checkNumber(number, 3) && (number % 5 == 0 || checkNumber(number, 5)))
+        if ((number % 3 == 0 || checkNumber(number, 3)) && ((number % 5 == 0 || checkNumber(number, 5))))
             return "fizz buzz";
         else if (number % 3 == 0 || checkNumber(number, 3))
             return "fizz";
@@ -26,7 +26,3 @@ public class FizzBuzzSolution {
     }
 
 }
-
-
-
-
