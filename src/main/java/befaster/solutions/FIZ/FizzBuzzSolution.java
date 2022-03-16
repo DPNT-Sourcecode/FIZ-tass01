@@ -14,15 +14,15 @@ public class FizzBuzzSolution {
         return false;
     }
 
-    boolean isDeluxe(int number){
-        if(number < 10)
+    boolean isDeluxe(int number) {
+        if (number < 10)
             return false;
 
         int x = number % 10;
         int auxiliar = number;
 
-        while(auxiliar > 0){
-            if(auxiliar % 10 != x)
+        while (auxiliar > 0) {
+            if (auxiliar % 10 != x)
                 return false;
             auxiliar /= 10;
         }
@@ -31,16 +31,35 @@ public class FizzBuzzSolution {
     }
 
     public String fizzBuzz(Integer number) {
-        boolean ok = false;
+        boolean okay = false;
+        String s = "";
 
         if (number % 3 == 0 || checkNumber(number, 3)) {
-            return "fizz";
-            ok = true;
+            s += "fizz";
+            okay = true;
         }
-        else if (number % 5 == 0 || checkNumber(number, 5))
-            return "buzz";
-        else return "" + number;
+
+        if (number % 5 == 0 || checkNumber(number, 5)) {
+            if (okay)
+                s += " ";
+
+            s += "buzz";
+            okay = true;
+        }
+
+        if (isDeluxe(number)) {
+            if (okay)
+                s += " ";
+
+            s += "deluxe";
+        }
+
+        if (s.equals(""))
+            s += number;
+
+        return s;
     }
 
 }
+
 
