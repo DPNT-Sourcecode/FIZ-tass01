@@ -51,6 +51,9 @@ public class FizzBuzzSolution {
             if (okay)
                 s += " ";
 
+            if(number % 2 == 1)
+                s += "fake ";
+
             s += "deluxe";
         }
 
@@ -61,5 +64,6 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
